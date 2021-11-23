@@ -1,0 +1,11 @@
+.new-background-color{
+  --background: #e20101;
+  --color: white;
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+

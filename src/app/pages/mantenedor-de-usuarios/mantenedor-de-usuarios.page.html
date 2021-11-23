@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar class="new-background-color" style="font-family: 'sans-serif';">
+    <ion-title>Cambiar Contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+<br>
+<ion-content [fullscreen]="true">
+  <ion-label  style="font-family: 'sans-serif';font-size: 20px;">Ingrese su correo</ion-label>
+  <ion-item style="border: 2px solid black;">
+    <ion-input [(ngModel)]="correo" placeholder="Ingrese el correo"></ion-input>
+  </ion-item>
+  <br>
+  <ion-label style="font-family: 'sans-serif';font-size: 20px;">Ingrese su nueva contraseña</ion-label>
+  <ion-item style="border: 2px solid black;font-family: 'sans-serif';">
+    <ion-input [(ngModel)]="password" placeholder="Ingrese la nueva contraseña"></ion-input>
+  </ion-item>
+  <br>
+  <ion-button expand="block" (click)='cambiarPassword()'>Cambiar contraseña</ion-button>
+  <br>
+  <ion-button color="danger" expand="block" (click)='elminarUsuario()'>Eliminar cuenta</ion-button>
+</ion-content>
+

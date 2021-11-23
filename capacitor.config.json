@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "CoroATE",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

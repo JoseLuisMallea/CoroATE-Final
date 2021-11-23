@@ -1,0 +1,30 @@
+
+
+<ion-content [fullscreen]="true" style="font-family: 'sans-serif'; font-size: 1.3rem; font-weight: 400; line-height: 1.5; text-align: left;">
+    <div align="center" >
+      <img src="assets/img/logoCOROATE.png" id="icon" alt="User Icon" height="230px">
+    </div>
+    <div style="text-align: center;">
+        <div class="example-container">
+          <mat-form-field appearance="fill">
+            <form #loginForm="ngForm">
+              <mat-label>Ingresa tu correo</mat-label>
+              <input email [type]=""  [(ngModel)]="email" name="email" placeholder="Correo@ejemplo.com">
+            </form>
+          </mat-form-field>
+          <hr>
+          <mat-form-field appearance="fill">
+            <mat-label>Ingresa tu contraseña</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" placeholder="*************" [(ngModel)]="password">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'Mostrar contraseña' : 'Ocultar contraseña'}}</mat-icon>
+            </button>
+          </mat-form-field>
+          <a [routerLink]="['/mantenedor-de-usuarios']" style="font-size: 12px;">¿Olvidaste tu contraseña?</a>
+          <br>
+          <ion-button color="success" ion-button (click)="validarLogin()">Ingresar</ion-button>
+          <ion-button [routerLink]="['/registrar-usuario']">Registrar</ion-button>
+        </div>
+        
+    </div>
+</ion-content>
