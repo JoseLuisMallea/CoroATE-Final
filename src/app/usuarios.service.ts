@@ -18,6 +18,7 @@ export class UsuariosService {
   public apiUrl = 'http://127.0.0.1:8000/api/detalle_usuario/'
   public apiURL2 = 'http://127.0.0.1:8000/api/lista_usuario'
   public apiLog = 'http://127.0.0.1:8000/api/loginUsuario/'
+  public apiPut = 'http://127.0.0.1:8000/api/putUsuario/'
 
   constructor(private http: HttpClient) { }
 
@@ -27,8 +28,8 @@ export class UsuariosService {
   createPost(post):Observable<any>{ 
     return this.http.post(this.apiURL2,post,this.httpOptions);
   }
-  updatePost(correo,password):Observable<any>{
-    return this.http.put(`${this.apiUrl}${correo}`,password,this.httpOptions);
+  updatePost(correo,post):Observable<any>{
+    return this.http.put(`${this.apiPut}${correo}`,post,this.httpOptions);
   } 
   deletePost(correo):Observable<any>{
     return this.http.delete(`${this.apiUrl}${correo}`,this.httpOptions);

@@ -17,27 +17,27 @@ export class MantenedorDeUsuariosPage {
   public body: any;
 
   constructor(private router: Router, public api: UsuariosService) { }
-  buscarUsuario(){
-    this.api.getPost(this.correo).subscribe(resultado => {
-    var resultadoString = JSON.stringify(resultado);
-    var usuarioJSON = JSON.parse(resultadoString);
-    console.log(usuarioJSON)
+  cambiarPassword(){
+    var newPassword = {
+      correo: this.correo,
+      password: this.password
+    }
+    this.correo = this.correo;
+    this.api.updatePost(this.correo,newPassword).subscribe((success)=>{
+      alert("Contraseña editada")
+      this.router.navigate(['/index']);
+      console.log(success); 
+    },error=>{
+      alert("Usuario no encontrado")
+      this.router.navigate(['/home']);
+      console.log(error)
     });
   }
-  cambiarPassword(){
-    this.api.getPost(this.correo).subscribe(resultado => {
-      var resultadoString = JSON.stringify(resultado.correo);
-      var usuarioJSON = JSON.parse(resultadoString);
-      this.api.updatePost(this.idUsuario,usuarioJSON).subscribe(resultado => {
-        this.correo = usuarioJSON.correo;
-        this.password = this.password;
-      })
-      });
-    
-  }
+
   elminarUsuario(){
     this.api.deletePost(this.correo).subscribe((success)=>{
       alert("Usuario Eliminado")
+      this.router.navigate(['/home']);
       console.log(success);
   },error=>{
     alert("Usuario no encontrado")

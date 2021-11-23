@@ -23,6 +23,7 @@ export class HomePage implements OnInit {
         this.router.navigate(['/index']);
         console.log(success);
     },error=>{
+      alert("Correo y/o contraseña incorrectas")
       console.log(error)
     });
     

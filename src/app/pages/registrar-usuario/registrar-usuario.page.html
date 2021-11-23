@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar class="new-background-color" style="font-family: 'sans-serif';">
+  <ion-toolbar style="font-family: 'sans-serif';">
     <ion-title>Registrar Ususario</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -29,4 +29,5 @@
 </ion-list>
 <br>
 <ion-button ion-button expand="block" color="success" (click)="nuevoUsuario()">Registrar</ion-button>
+<ion-button ion-button expand="block" color="danger" [routerLink]="['/home']">Cancelar</ion-button>
 </ion-content>
